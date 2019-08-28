@@ -1,0 +1,23 @@
+language: generic
+sudo: required
+dist: trusty
+
+addons:
+  apt:
+    update: true
+
+script:
+  - chmod +x ./build.sh && ./build.sh
+
+branches:
+  only:
+    - master
+
+env:
+ global:
+   - GH_REF: github.com/xuchengpeng/gohttpserver.git
+
+# Local Variables:
+# indent-tabs-mode: nil
+# coding: utf-8
+# End:
