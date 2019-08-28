@@ -1,10 +1,16 @@
-language: generic
 sudo: required
-dist: trusty
+services:
+  - docker
+language: go
+go:
+  - "1.11"
+env:
+  - GO111MODULE=on
 
 addons:
   apt:
-    update: true
+    packages:
+      - docker-ce
 
 script:
   - chmod +x ./build.sh && ./build.sh
